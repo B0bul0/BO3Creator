@@ -17,6 +17,7 @@ public class AliasCommand extends Command {
 
     public AliasCommand(BO3CreatorPlugin plugin) {
         super("bo3creator");
+        setAliases(Arrays.asList("bo3", "bo3c"));
         this.plugin = plugin;
 
         aliases.put("1", "bo3pos1");
