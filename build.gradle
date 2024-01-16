@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.5.1'
+    id "com.github.johnrengelman.shadow" version "7.0.0"
+}
+
+group 'me.bobulo'
+version '1.0-SNAPSHOT'
+
+bukkit {
+    name = 'BO3Creator'
+    main = 'me.bobulo.bo3.BO3CreatorPlugin'
+    description = 'A plugin to create BO3 files for TerrainControl.'
+    authors = ['B0bul0']
+    version = "1.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.github.azbh111:craftbukkit-1.8.8:R'
+
+    implementation 'org.jetbrains:annotations:24.1.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+}
+
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = 'UTF-8'
+}
