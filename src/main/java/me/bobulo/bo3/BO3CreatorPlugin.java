@@ -5,6 +5,7 @@ import me.bobulo.bo3.command.*;
 import me.bobulo.bo3.listener.PlayerListener;
 import me.bobulo.bo3.listener.WandListener;
 import me.bobulo.bo3.manager.PlayerManager;
+import me.bobulo.bo3.manager.StructureManager;
 import me.bobulo.bo3.util.CommandUtils;
 import me.bobulo.bo3.writer.BO3CreatorWriter;
 import org.bukkit.command.Command;
@@ -19,10 +20,14 @@ public class BO3CreatorPlugin extends JavaPlugin {
     @Getter
     private BO3CreatorWriter bo3CreatorWriter;
 
+    @Getter
+    private StructureManager structureManager;
+
     @Override
     public void onEnable() {
 
         this.playerManager = new PlayerManager();
+        this.structureManager = new StructureManager(this);
         this.bo3CreatorWriter = new BO3CreatorWriter(this);
 
         // Register listeners
@@ -35,6 +40,7 @@ public class BO3CreatorPlugin extends JavaPlugin {
         registerCommand(new WandCommand(this));
         registerCommand(new PosCommand(this, 1));
         registerCommand(new PosCommand(this, 2));
+        registerCommand(new ListCommand(this));
         registerCommand(new AliasCommand(this));
 
         getLogger().info("BO3Creator has been enabled!");

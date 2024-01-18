@@ -22,12 +22,12 @@ public class AliasCommand extends Command {
 
         aliases.put("1", "bo3pos1");
         aliases.put("2", "bo3pos2");
-
         aliases.put("center", "bo3center");
 
         aliases.put("wand", "bo3wand");
 
         aliases.put("create", "bo3create");
+        aliases.put("list", "bo3list");
     }
 
     @Override

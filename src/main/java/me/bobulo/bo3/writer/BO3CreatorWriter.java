@@ -30,7 +30,7 @@ public class BO3CreatorWriter {
         Validate.notNull(bo3Structure.getPos2(), "Pos2 is not set!");
         Validate.notNull(bo3Structure.getCenter(), "Center is not set!");
 
-        File file = new File(plugin.getDataFolder(), "BO3/" + bo3Structure.getName() + ".bo3");
+        File file = plugin.getStructureManager().getStructureFile(bo3Structure.getName());
         if (file.exists()) {
             throw new IllegalArgumentException("File already exists!");
         }
